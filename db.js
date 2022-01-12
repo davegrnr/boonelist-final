@@ -16,7 +16,8 @@ const proConfig = {
     connectionString: process.env.DATABASE_URL
 }
 
-const db = new Client(devConfig)
+const db = new Client(process.env.NODE_ENV === "production" ? proConfig : devConfig)
+
 // if (process.env.NODE_ENV === "production") {
 //     db = new Client({
 //         connectionString: getDatabaseUri(),

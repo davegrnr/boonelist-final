@@ -37,8 +37,6 @@ if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "client/build")))
 }
 
-
-console.log(process.env.DATABASE_URL);
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
     return next(new NotFoundError());
