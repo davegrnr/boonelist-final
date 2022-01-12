@@ -27,11 +27,17 @@ app.use("/users", usersRoutes);
 app.use("/services", servicesRoutes);
 app.use("/sales", salesRoutes);
 
+// if(process.env.NODE_ENV === "production"){
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.join(__dirname, 'client/build'))
+//     })
+// }
+
 if(process.env.NODE_ENV === "production"){
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, './build', 'index.html'))
-    })
+    app.use(express.static(path.join(__dirname, "client/build")))
 }
+
+
 console.log(process.env.DATABASE_URL);
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
