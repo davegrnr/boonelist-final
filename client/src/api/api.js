@@ -20,19 +20,24 @@ class BoonelistApi {
         console.debug("API Call:", endpoint, data, method);
 
         const url = `${BASE_URL}/${endpoint}`;
-        const headers = { Authorization: `Bearer ${BoonelistApi.token}` };
+        const headers = { 
+            Authorization: `Bearer ${BoonelistApi.token}`,
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8;application/json'
+        };
         const params = (method === "get")
             ? data
             : {};
 
         try {
-            return (await axios({ url, method, data, params, headers }));
+            return (await axios({ url, method, data, params, headers })).data;
         } catch (err) {
-        console.log(err)
-        console.error("API Error:", err.response);
-        let message = err.response.data.error.message;
-        throw Array.isArray(message) ? message : [message];
-        }
+            console.log(err)
+            console.error("API Error:", err.response);
+            let message = err.response.data.error.message;
+            throw Array.isArray(message) ? message : [message];
+            }
         }
 
     /** Individual API routes -->
