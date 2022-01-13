@@ -27,9 +27,10 @@ app.use("/users", usersRoutes);
 app.use("/services", servicesRoutes);
 app.use("/sales", salesRoutes);
 
+
 // if(process.env.NODE_ENV === "production"){
 //     app.get('*', (req, res) => {
-//         res.sendFile(path.join(__dirname, 'client/build'))
+//         res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
 //     })
 // }
 

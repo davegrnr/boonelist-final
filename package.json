@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "server": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "david garner",

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 // const BASE_URL = process.env.REACT_APP_BASE_URL || "https://boonelist.herokuapp.com";
 
 /** API Class.
@@ -14,7 +14,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
  
 class BoonelistApi {
 // the token for interactive with the API will be stored here.
-    // static token;
+    static token;
 
     static async request(endpoint, data = {}, method = "get") {
         console.debug("API Call:", endpoint, data, method);
@@ -30,8 +30,8 @@ class BoonelistApi {
         } catch (err) {
         console.error("API Error:", err.response);
         console.log(data)
-        // let message = err.response.data.error.message;
-        // throw Array.isArray(message) ? message : [message];
+        let message = err.response.data.error.message;
+        throw Array.isArray(message) ? message : [message];
         }
         }
 
