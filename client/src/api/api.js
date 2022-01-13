@@ -61,8 +61,8 @@ class BoonelistApi {
         // log user in and assign token
 
         static async login(data) {
-            let res = await this.request(`auth/token`, data, "post");
-            return res.token;
+            let response = await this.request(`auth/token`, data, "post");
+            return response.token;
         }
 
         // Update user profile from form data
