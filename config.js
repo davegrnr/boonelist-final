@@ -6,9 +6,6 @@ require("dotenv").config();
 require("colors");
 
 const PORT = +process.env.PORT || 3001;
-const SECRET_KEY = process.env.SECRET_KEY || "secret-dev23930055132";
-
-
 
 
 // Use dev database, testing database, or via env var, production database
