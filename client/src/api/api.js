@@ -32,7 +32,9 @@ class BoonelistApi {
             : {};
 
         try {
-            return (await axios({ url, method, data, params, headers })).data;
+            let response = (await axios({ url, method, data, params, headers })).data
+            return response;
+            // return (await axios({ url, method, data, params, headers })).data;
         } catch (err) {
             console.log(err)
             console.error("API Error:", err.response);
@@ -61,8 +63,8 @@ class BoonelistApi {
         // log user in and assign token
 
         static async login(data) {
-            let response = await this.request(`auth/token`, data, "post");
-            return response.token;
+            let res = await this.request(`auth/token`, data, "post");
+            return res.token;
         }
 
         // Update user profile from form data
