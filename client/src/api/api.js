@@ -32,7 +32,7 @@ class BoonelistApi {
             : {};
 
         try {
-            return (await axios({ url, method, data, params, headers })).data;
+            return (await axios.get({ url, method, data, params, headers })).data;
         } catch (err) {
             console.log(err)
             console.error("API Error:", err.response);
