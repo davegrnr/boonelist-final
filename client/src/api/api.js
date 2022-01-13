@@ -30,6 +30,7 @@ class BoonelistApi {
         } catch (err) {
         console.error("API Error:", err.response);
         console.log(data)
+        console.log(response)
         let message = err.response.data.error.message;
         throw Array.isArray(message) ? message : [message];
         }
