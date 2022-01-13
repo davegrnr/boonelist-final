@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 // const BASE_URL = process.env.REACT_APP_BASE_URL || "https://boonelist.herokuapp.com";
 
 /** API Class.
@@ -10,7 +10,7 @@ import axios from "axios";
  * be any API-aware stuff elsewhere in the frontend.
  *
  */
- let token = process.env.TOKEN
+
  
 class BoonelistApi {
 // the token for interactive with the API will be stored here.
