@@ -18,6 +18,8 @@ require("dotenv").config()
 
 // const db = new Client(process.env.NODE_ENV === "production" ? proConfig : devConfig)
 
+let db;
+
 if (process.env.NODE_ENV === "production") {
     db = new Client({
         connectionString: getDatabaseUri(),
