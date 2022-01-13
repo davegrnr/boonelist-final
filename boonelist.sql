@@ -1,6 +1,7 @@
 \echo 'Delete and recreate boonelist db?'
 \prompt 'Return for yes or control-C to cancel > ' foo
 
+-- $ cat boonelist.sql | heroku pg:psql -a boonelist to seed in Heroku CLI
 DROP DATABASE boonelist;
 CREATE DATABASE boonelist;
 \connect boonelist
