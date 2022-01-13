@@ -26,7 +26,7 @@ class BoonelistApi {
             : {};
 
         try {
-        return (await axios({ url, method, data, params, headers })).data;
+            return (await axios({ url, method, data, params, headers }));
         } catch (err) {
         console.log(err)
         console.error("API Error:", err.response);
