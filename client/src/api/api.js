@@ -24,7 +24,8 @@ class BoonelistApi {
             Authorization: `Bearer ${BoonelistApi.token}`,
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8;application/json'
+            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8;application/json',
+            'Content-Type': 'application/json'
         };
         const params = (method === "get")
             ? data
