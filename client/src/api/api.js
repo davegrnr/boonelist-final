@@ -24,7 +24,6 @@ class BoonelistApi {
             Authorization: `Bearer ${BoonelistApi.token}`,
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8;application/json',
             'Content-Type': 'application/json'
         };
         const params = (method === "get")
@@ -54,6 +53,7 @@ class BoonelistApi {
         // Signup with user data input
 
         static async signup(data) {
+
             let res = await this.request(`auth/register`, data, "post");
             return res.token
         }
@@ -62,6 +62,7 @@ class BoonelistApi {
 
         static async login(data) {
             let res = await this.request(`auth/token`, data, "post");
+            console.log(res)
             return res.token;
         }
 

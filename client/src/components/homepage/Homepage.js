@@ -15,7 +15,6 @@ import './Homepage.css'
 function Homepage(){
     const { currentUser } = useContext(UserContext)
 
-    console.log(currentUser)
 
     function loggedOutHomepage(){
         return(
