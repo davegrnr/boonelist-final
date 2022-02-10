@@ -18,7 +18,7 @@ function Homepage(){
 
     function loggedOutHomepage(){
         return(
-            <div className="Homepage">
+            <div className="homepage">
                 <div className="container">
                     <h1 className="boonelist-heading">Welcome to Boonelist!</h1>
                     <h3>Check out local services offered and items for sale for the Boone, NC and surrounding areas in one convenient place</h3>
@@ -33,7 +33,7 @@ function Homepage(){
 
     function loggedInHomepage(){
         return (
-            <div className="Homepage">
+            <div className="homepage">
                 <div className="container">
                     <h1 className="boonelist-heading">Welcome to Boonelist, {currentUser.username}!</h1>
                     <h3>Check out local services offered and items for sale for the Boone, NC and surrounding areas in one convenient place</h3>
