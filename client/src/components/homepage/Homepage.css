@@ -11,3 +11,9 @@ span {
   opacity: 0.6;
   box-shadow: 25x 25px 25px 25px rgb(255, 255, 255);
 }
+
+h1,
+h3,
+span {
+  color: rgb(42, 229, 176);
+}
